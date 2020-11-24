@@ -117,3 +117,7 @@ C:\Users\derek\Source\Repos\derekdevaughn\cse445598-proj5\WebAppP5\obj\Debug\Web
 C:\Users\derek\Source\Repos\derekdevaughn\cse445598-proj5\WebAppP5\obj\Debug\WebAppP5.pdb
 C:\Users\derek\Source\Repos\derekdevaughn\cse445598-proj5\WebAppP5\bin\EncryptDecryptHash.dll
 C:\Users\derek\Source\Repos\derekdevaughn\cse445598-proj5\WebAppP5\bin\EncryptDecryptHash.pdb
+C:\Users\Owner\Source\Repos\larissapokam\proj5A9_repo\WebAppP5\obj\Debug\WebAppP5.csprojAssemblyReference.cache
+C:\Users\Owner\Source\Repos\larissapokam\proj5A9_repo\WebAppP5\obj\Debug\WebAppP5.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Source\Repos\larissapokam\proj5A9_repo\WebAppP5\obj\Debug\WebAppP5.dll
+C:\Users\Owner\Source\Repos\larissapokam\proj5A9_repo\WebAppP5\obj\Debug\WebAppP5.pdb
