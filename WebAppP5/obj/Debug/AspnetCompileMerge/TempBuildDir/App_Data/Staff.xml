@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Staff>
+  <User>
+    <username>TA</username>
+    <password>Cse445ta!</password>
+  </User>
+  <User>
+    <username>Dallas</username>
+    <password>1234</password>
+  </User>
+  <User>
+    <username>Larissa</username>
+    <password>4321</password>
+  </User>
+  <User>
+    <username>Derek</username>
+    <password>6789</password>
+  </User>
+  <User>
+    <username>Mary</username>
+    <password>0000</password>
+  </User>
+</Staff>
