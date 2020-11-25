@@ -15,6 +15,9 @@ namespace WebAppP5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+             //Use the Global.asax file function to get information
+              Label6.Text =  Application["SessionCounter"].ToString();
+
             HttpCookie myCookies = Request.Cookies["myCookieID"];
             if ((myCookies == null) || (myCookies["Name"] == ""))
             {
@@ -82,8 +85,7 @@ namespace WebAppP5
                     return;
                 }
 
-                //Use the Global.asax file function to get information
-                Label5.Text = "Numbers of visitors:  " + Application["SessionCounter"].ToString();
+               
             }
         }
 
@@ -174,41 +176,5 @@ namespace WebAppP5
             lblFelonious.Text = generatedString;
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            string path = @"c:\ServiceStorage";
-            String savePath = @"c:\ServiceStorage\";
-            try
-            {
-                if (Directory.Exists(path))
-                {
-                    savePath = @"c:\ServiceStorage\";
-                    Console.WriteLine("That path exists already.");
-                }
-                else
-                {
-                    DirectoryInfo di = Directory.CreateDirectory(path);
-                    savePath = @"c:\ServiceStorage\";
-                    Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(path));
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("The process failed: {0}", ex.ToString());
-            }
-
-            if (FileUpload1.HasFile)
-            {
-                String fileName = FileUpload1.FileName;
-                savePath += fileName;
-                FileUpload1.SaveAs(savePath);
-                lblmessage.Text = "Your file was store at:";
-                Label3.Text = savePath;
-            }
-            else
-            {
-                Label3.Text = "You did not specify a file to upload.";
-            }
-        }
     }
-}
+  }

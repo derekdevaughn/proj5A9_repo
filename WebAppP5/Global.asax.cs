@@ -21,25 +21,27 @@ namespace WebAppP5
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            //Keep track of Captcha random number until verified or timeout
-            Random randomNum = new Random();
-            Int32 captchaNum = randomNum.Next(100000, 999999);
-            Session["Captcha"] = captchaNum.ToString();
-
-            //code that run when a new session is started
+             //code that run when a new session is started
             SessionCounter = SessionCounter + 1;
 
             int c = Convert.ToInt32(Application["SessionCounter"]);
             if (c > 0)
             {
                 int i = Convert.ToInt32(Application["SessionCounter"]) + 1;
-                Application["SessionCounter"] = i;
+                Application["SessionCounter"] = SessionCounter;
                 Application.UnLock();
             }
             else
             {
                 Application["SessionCounter"] = 1;
             }
+
+            //Keep track of Captcha random number until verified or timeout
+            Random randomNum = new Random();
+            Int32 captchaNum = randomNum.Next(100000, 999999);
+            Session["Captcha"] = captchaNum.ToString();
+
+           
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -59,6 +61,11 @@ namespace WebAppP5
 
         protected void Session_End(object sender, EventArgs e)
         {
+            //decrease the count when a user leave its session
+           //  Int32 count = (Int32)Application["SessionCounter"];
+            SessionCounter = SessionCounter - 1;
+             Application["SessionCounter"] = SessionCounter;
+        
             //Reset Capcha when Session ends
             //Clear session captcha
             Session["Captcha"] = null;
